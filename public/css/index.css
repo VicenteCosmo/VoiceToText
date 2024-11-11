@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+body{
+  background-image: url('/assets/desk.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  image-rendering:optimizeQuality;
+  color: #65594b;
+
+  @media (max-width: 760px) {
+    background-position-x: -500px;
+  }
+}

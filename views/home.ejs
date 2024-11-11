@@ -1,0 +1,52 @@
+<%- include('partials/header.ejs') %>
+
+<form 
+action="/" method="POST"
+style="width: 90vw; justify-content: center; align-items: center; margin-top: 100px;" class="mx-auto ">
+  
+  <div data-mdb-input-init class="form-outline mb-4">
+    <textarea id="text-area" class="form-control text-primary" rows="4" name="texto" required 
+    style="background: linear-gradien(to bottom, #65594b, #fff); colr: greenyellow;
+    font-size: larger; font-weight: bolder;
+    "
+    ></textarea>
+    <label class="form-label" for="form4Example3"></label>
+  </div>
+
+  <button data-mdb-ripple-init type="button" class="btn bg-light btn-block mb-4" id="btn-gravar"
+  style="color: #fff;
+  font-weight: bolder; font-size: large; background: linear-gradient(to left, #65594b, #fff);
+  ">Gravar Áudio</button>
+
+  <button data-mdb-ripple-init type="submit" class="btn bg-light btn-block mb-4" style="color: #fff;
+  font-weight: bolder; font-size: large; background: linear-gradient(to right, #65594b, #fff);
+  " >Guardar</button>
+</form>
+
+<%- include('partials/footer.ejs') %>
+
+<script>
+  const gravar = document.getElementById('btn-gravar')
+  let texto = document.getElementById('text-area')
+
+
+  const recognition = new webkitSpeechRecognition()
+  recognition.continuous = true
+  recognition.lang = window.navigator.language
+  recognition.interimResults = true
+  // recognition.maxAlternatives = 1
+
+  gravar.addEventListener('click', ()=>{
+    recognition.start()
+  }) 
+
+  recognition.onresult = (event)=>{
+    const transcript = event.results[event.results.length -1][0].transcript
+    console.log(transcript)
+    $('#text-area').val(transcript)
+    // texto.innerHTML = transcript
+  }
+
+
+
+</script>
