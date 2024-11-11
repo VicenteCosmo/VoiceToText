@@ -3,6 +3,11 @@ const { query, application } = require('express')
 const DB = require('./database/index')
 const bodyParser = require('body-parser')
 const pdf = require('html-pdf')
+const path = require('path')
+
+const options = { 
+    phantomPath: path.resolve(__dirname, 'node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs') 
+}
 
 const encoder = bodyParser.urlencoded()
 
@@ -37,7 +42,7 @@ router.get('/baixar', (req, res)=>{
             const content = result[0].content
             console.log(content)
 
-            pdf.create(content).toBuffer((e, buffer)=>{
+            pdf.create(content, options).toBuffer((e, buffer)=>{
                 if(e){
                     console.log('erro ao gerar o pdf:'+e)
                 }
