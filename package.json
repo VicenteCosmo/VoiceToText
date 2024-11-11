@@ -20,6 +20,7 @@
     "html-pdf": "^3.0.1",
     "http": "^0.0.1-security",
     "https": "^1.0.0",
+    "lsof": "^0.0.4",
     "mysql": "^2.18.1",
     "nodemon": "^3.1.0",
     "openssl": "^2.0.0",
