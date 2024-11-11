@@ -8,7 +8,7 @@ const path = require('path')
 const encoder = bodyParser.urlencoded()
 
 const options = {
-    phantomPath: path.resolve(__dirname, 'node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs')
+    phantomPath: path.resolve(__dirname, './node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs')
 }
 
 router.get('/', (req, res)=>{
