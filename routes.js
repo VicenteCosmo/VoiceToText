@@ -14,7 +14,7 @@ router.get('/', (req, res)=>{
 router.post('/', encoder, (req, res)=>{
     const texto = req.body.texto
     
-    const query = "INSERT INTO voicetotext.voicetext (`content`) VALUES (?)"
+    const query = "INSERT INTO bzochzffqul3hly6dhy5.voicetext (`content`) VALUES (?)"
     DB.query(query, (texto), (err, result)=>{
         if(err){
             console.log('erros ao inserir os dados:'+err)
@@ -28,7 +28,7 @@ router.post('/', encoder, (req, res)=>{
 
 router.get('/baixar', (req, res)=>{
 
-    const query = "SELECT content FROM voicetotext.voicetext ORDER BY id DESC LIMIT 1"
+    const query = "SELECT content FROM bzochzffqul3hly6dhy5.voicetext ORDER BY id DESC LIMIT 1"
     DB.query(query, (err, result)=>{
         if(err){
             console.log('erro ao aprensentar o texto')
