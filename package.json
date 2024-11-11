@@ -26,7 +26,8 @@
     "openssl": "^2.0.0",
     "path": "^0.12.7",
     "pg": "^8.11.4",
-    "phantomjs-prebuilt": "^2.1.16"
+    "phantomjs-prebuilt": "^2.1.16",
+    "puppeteer": "^23.7.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
