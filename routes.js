@@ -5,6 +5,13 @@ const bodyParser = require('body-parser')
 const pdf = require('html-pdf')
 const path = require('path')
 
+
+const fs = require('fs'); 
+const phantomjsPath = path.resolve(__dirname, 'node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs'); 
+fs.access(phantomjsPath, fs.constants.X_OK, (err) => { 
+    console.log(`${phantomjsPath} ${err ? 'não tem permissões de execução' : 'está pronto para ser executado'}`); });
+
+
 const puppeteer = require('puppeteer')
 
 const encoder = bodyParser.urlencoded()
