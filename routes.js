@@ -8,8 +8,15 @@ const path = require('path')
 
 const fs = require('fs'); 
 const phantomjsPath = path.resolve(__dirname, 'node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs'); 
-fs.access(phantomjsPath, fs.constants.X_OK, (err) => { 
-    console.log(`${phantomjsPath} ${err ? 'não tem permissões de execução' : 'está pronto para ser executado'}`); });
+fs.access(phantomjsPath, fs.constants.X_OK, (err, good) => { 
+    if(err){
+        console.log('not allowed:'+err); 
+         }
+    else{
+        console.log('allowed:'+good)
+       }
+     }
+)
 
 
 const puppeteer = require('puppeteer')
