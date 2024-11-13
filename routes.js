@@ -53,7 +53,7 @@ router.post('/', encoder, (req, res)=>{
                      console.log('pdf gerado')
 
                      res.setHeader('Content-Disposition', 'attachment ; filename=file.pdf')
-                     res.setHeader('Content-Type', application/pdf)
+                     res.setHeader('Content-Type', 'application/pdf')
 
                      res.send(buffer)
                  }
